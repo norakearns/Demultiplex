@@ -144,7 +144,7 @@ Close all the files!
     4. Return statement
 ```
 Convert_phred(phred_score: str) -> int
-Takes as it's input each individual Phred score (character), and uses Phred33 encoding to convert it to an integer Quality Score.
+```Takes as it's input each individual Phred score (character), and uses Phred33 encoding to convert it to an integer Quality Score.```
     Input: E
     Output: 36
     Return(Quality_Score)
