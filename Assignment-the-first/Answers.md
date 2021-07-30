@@ -11,10 +11,10 @@
 | 1294_S1_L008_R4_001.fastq.gz | read2 |
 
 2. Per-base NT distribution
-    1. ![R1_hist](//projects/bgmp/nkearns/bioinformatics/Bi622/Demultiplex/Demultiplex/Assignment-the-first/R1_hist.png "R1 QS Histogram")
-    ![R2_hist](//projects/bgmp/nkearns/bioinformatics/Bi622/Demultiplex/Demultiplex/Assignment-the-first/R2_hist.png "R2 QS Histogram")
-    ![R3_hist](//projects/bgmp/nkearns/bioinformatics/Bi622/Demultiplex/Demultiplex/Assignment-the-first/R1_hist.png "R3 QS Histogram")
-    ![R4_hist](//projects/bgmp/nkearns/bioinformatics/Bi622/Demultiplex/Demultiplex/Assignment-the-first/R1_hist.png "R4 QS Histogram")
+    1. ![R1_hist](//projects/bgmp/nkearns/bioinformatics/Bi622/Demultiplex/Demultiplex/Assignment-the-first/R1_hist.png)
+    ![R2_hist](//projects/bgmp/nkearns/bioinformatics/Bi622/Demultiplex/Demultiplex/Assignment-the-first/R2_hist.png)
+    ![R3_hist](//projects/bgmp/nkearns/bioinformatics/Bi622/Demultiplex/Demultiplex/Assignment-the-first/R1_hist.png)
+    ![R4_hist](//projects/bgmp/nkearns/bioinformatics/Bi622/Demultiplex/Demultiplex/Assignment-the-first/R1_hist.png)
     
     2. 
     ```
