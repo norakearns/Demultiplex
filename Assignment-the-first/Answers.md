@@ -18,7 +18,12 @@
     
     2. 
     ```
-    The ultimate use of this RNAseq data is for differential gene expression. The next step in this experiment would be to compare the different sequencing libraries. A quality score cutoff of 20 would likely be appropriate for this purpose because the reads only need to be aligned back to a reference genome (so a highly quality genome has already been assembled). However, you would likely want a higher quality score cutoff (like 30) for the indexes to allow appropriate separation/demultiplexing of the data.```
+    The ultimate use of this RNAseq data is for differential gene expression. 
+    The next step in this experiment would be to compare the different sequencing libraries. 
+    A quality score cutoff of 20 would likely be appropriate for this purpose because the reads 
+    only need to be aligned back to a reference genome (so a highly quality genome has already 
+    been assembled). However, you would likely want a higher quality score cutoff (like 30) 
+    for the indexes to allow appropriate separation/demultiplexing of the data.
     ```
     3. 
     ```
@@ -31,7 +36,16 @@
 ## Part 2
 1. Define the problem
 ```
-All the reads are in the same file, and we want to separate them into 24 groups by index. The indexes and reads are at the same positions in different files, but the indexes are not directly attached to each read. Another problem is that some of the indexes are swapped, and these incorrectly tagged reads need to be sorted out. Some indexes will also not match the original set, or will have "N" bases in them. Reads with these indexes will also need to be sorted out. Finally, not all reads will have sufficient quality scores. Low quality reads (with an average quality score of below 20) will have to be be sorted out. A relatively low QS (20, as opposed to 30 or 40) was selected for the reads because the reads are not being used to assemble a genome, the fragments only have to align to each other. A higher QS (30) was selected for the index because the indexes are essential for organizing/demultiplexing.
+All the reads are in the same file, and we want to separate them into 24 groups by index. 
+The indexes and reads are at the same positions in different files, but the indexes are not 
+directly attached to each read. Another problem is that some of the indexes are swapped, and 
+these incorrectly tagged reads need to be sorted out. Some indexes will also not match the 
+original set, or will have "N" bases in them. Reads with these indexes will also need to be sorted out. 
+Finally, not all reads will have sufficient quality scores. Low quality reads (with an average quality 
+score of below 20) will have to be be sorted out. A relatively low QS (20, as opposed to 30 or 40) was
+selected for the reads because the reads are not being used to assemble a genome, the fragments only 
+have to align to each other. A higher QS (30) was selected for the index because the indexes are 
+essential for organizing/demultiplexing.
 ```
 
 
