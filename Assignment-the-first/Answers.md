@@ -30,10 +30,13 @@
     
 ## Part 2
 1. Define the problem
+```
 All the reads are in the same file, and we want to separate them into 24 groups by index. The indexes and reads are at the same positions in different files, but the indexes are not directly attached to each read. Another problem is that some of the indexes are swapped, and these incorrectly tagged reads need to be sorted out. Some indexes will also not match the original set, or will have "N" bases in them. Reads with these indexes will also need to be sorted out. Finally, not all reads will have sufficient quality scores. Low quality reads (with an average quality score of below 20) will have to be be sorted out. A relatively low QS (20, as opposed to 30 or 40) was selected for the reads because the reads are not being used to assemble a genome, the fragments only have to align to each other. A higher QS (30) was selected for the index because the indexes are essential for organizing/demultiplexing.
+```
+
 
 2. Describe output
-
+```
 48 files = one Read1 FASTQ file and one Read2 FASTQ file per matching index-pair (24 index pairs)
     - each read file needs to have the header adjusted to have the indexes on it (the read 1 and read 2 index)
 2 files = two FASTQ files with index-hopped reads-pairs
@@ -41,18 +44,18 @@ All the reads are in the same file, and we want to separate them into 24 groups 
 2 files = files undetermined (non-matching or low quality) index-pairs
     - The indexes don't match any of the 24 set indexes
     - Or if the indexes are low-quality (Ns in the index)
-
+    
 The algorithm should report:
     - the number of read-pairs with properly matched indexes (per index-pair) 
     - the number of read pairs with index-hopping observed 
     - the number of read pairs with unknown index(es). 
+ ```
 
 3. Upload your [4 input FASTQ files](../TEST-input_FASTQ) and your [>=6 expected output FASTQ files](../TEST-output_FASTQ).
 
-       
-
+      
 4. Pseudocode
-
+```
 Open Read1, Index1, Index2, and Read2 - don't use with open
 Make a name for each file that makes sense:
 Index1 = 1294_S1_L008_R2_001.fastq.gz
@@ -117,7 +120,7 @@ For line in file:
             Write the corresponding record to R2_bad.out
 
 Close all the files!
-
+```
 5. High level functions. For each function, be sure to include:
     1. Description/doc string
     2. Function headers (name and parameters)
@@ -125,7 +128,7 @@ Close all the files!
     4. Return statement
 ```
 Convert_phred(phred_score: str) -> int
-```Takes as it's input each individual Phred score (character), and uses Phred33 encoding to convert it to an integer Quality Score.```
+Takes as it's input each individual Phred score (character), and uses Phred33 encoding to convert it to an integer Quality Score.
     Input: E
     Output: 36
     Return(Quality_Score)
