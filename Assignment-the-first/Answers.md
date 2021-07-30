@@ -1,7 +1,4 @@
-![R1_hist](https://user-images.githubusercontent.com/59736592/127711365-796136e5-c10b-4298-951f-9298529eff93.png)
-![R2_hist](https://user-images.githubusercontent.com/59736592/127711377-535b73f4-59e8-423a-aef2-41257f09ff81.png)
-![R3_hist](https://user-images.githubusercontent.com/59736592/127711380-34f867e3-c856-437d-81c8-4259d1b243ed.png)
-![R4_hist](https://user-images.githubusercontent.com/59736592/127711385-995d4874-3c2e-41ac-8b71-57f9c1bc7d73.png)
+
 # Assignment the First
 
 ## Part 1
@@ -15,10 +12,10 @@
 | 1294_S1_L008_R4_001.fastq.gz | read2 |
 
 2. Per-base NT distribution
-    1. ![R1_hist](//projects/bgmp/nkearns/bioinformatics/Bi622/Demultiplex/Demultiplex/Assignment-the-first/R1_hist.png)
-    ![R2_hist](//projects/bgmp/nkearns/bioinformatics/Bi622/Demultiplex/Demultiplex/Assignment-the-first/R2_hist.png)
-    ![R3_hist](//projects/bgmp/nkearns/bioinformatics/Bi622/Demultiplex/Demultiplex/Assignment-the-first/R1_hist.png)
-    ![R4_hist](//projects/bgmp/nkearns/bioinformatics/Bi622/Demultiplex/Demultiplex/Assignment-the-first/R1_hist.png)
+![R1_hist](https://user-images.githubusercontent.com/59736592/127711365-796136e5-c10b-4298-951f-9298529eff93.png)
+![R2_hist](https://user-images.githubusercontent.com/59736592/127711377-535b73f4-59e8-423a-aef2-41257f09ff81.png)
+![R3_hist](https://user-images.githubusercontent.com/59736592/127711380-34f867e3-c856-437d-81c8-4259d1b243ed.png)
+![R4_hist](https://user-images.githubusercontent.com/59736592/127711385-995d4874-3c2e-41ac-8b71-57f9c1bc7d73.png)
     
     2. 
     ```
