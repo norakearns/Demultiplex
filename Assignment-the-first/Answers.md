@@ -12,7 +12,7 @@
 | 1294_S1_L008_R4_001.fastq.gz | read2 |
 
 2. Per-base NT distribution
-    1. Per-base NT distribution
+
     ![R1_hist](https://user-images.githubusercontent.com/59736592/127711365-796136e5-c10b-4298-951f-9298529eff93.png)
     ![R2_hist](https://user-images.githubusercontent.com/59736592/127711377-535b73f4-59e8-423a-aef2-41257f09ff81.png)
     ![R3_hist](https://user-images.githubusercontent.com/59736592/127711380-34f867e3-c856-437d-81c8-4259d1b243ed.png)
