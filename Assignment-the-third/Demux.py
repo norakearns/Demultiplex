@@ -207,7 +207,11 @@ while readline_counter < num_lines: # for every line in the file
         for i in R2_four:
             Index_dict[str(I1_four[1] + "_R2")].write(i + "\n")
             #print(i)
-            
+    elif (I1_four[1] not in Index_list) or (I2_four[1] not in Index_list):
+        for i in R1_four:
+            R1_bad.write(i + "\n")
+        for i in R2_four:
+            R2_bad.write(i + "\n")
 
 #print("at the level of while loop \n") # if you do stuff here it only processes the last record
 
