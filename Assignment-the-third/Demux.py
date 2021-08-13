@@ -157,57 +157,40 @@ while readline_counter < num_lines: # for every line in the file
 
 # Check if indexes contain N by looking at the last 17 characters of the new header
 # If Total_Index contains an N -> write the corresponding record from Read1 to R1_bad.out
-    if "N" in R1_four[0][-18:]: 
-        for i in R1_four:
-            R1_bad.write(i + "\n")
-
-    if "N" in R2_four[0][-18:]: 
-        for i in R2_four:
-            R2_bad.write(i + "\n")
-
-# Check if Read Qscore is below the cutoff(30), or if Index quality line is below the cutoff(30)
     Read1_QS = qual_score(R1_four[3])
     Read2_QS = qual_score(R2_four[3])
     Index1_QS = qual_score(I1_four[3])
     Index2_QS = qual_score(I2_four[3])
-
-    if Read1_QS < 20:
+    
+    if "N" in R1_four[0][-18:] or "N" in R2_four[0][-18:]: 
         for i in R1_four:
             R1_bad.write(i + "\n")
-        
-    if Read2_QS < 20:
         for i in R2_four:
             R2_bad.write(i + "\n")
 
-    if Index1_QS < 30:
+# Check if Read Qscore is below the cutoff(30), or if Index quality line is below the cutoff(30)
+    elif Read1_QS < 20 or Index1_QS < 30 or Read2_QS < 20 or Index2_QS < 30:
         for i in R1_four:
             R1_bad.write(i + "\n")
-        
-    if Index2_QS < 30:
         for i in R2_four:
             R2_bad.write(i + "\n")
 
-    #print("Index 1 = " + str(I1_four[1]))
-    #print("Index 2 = " + str(I2_four[1]))
-
-    if Index_Match(I1_four[1], I2_four[1]) == False and (I1_four[1] in Index_list and I2_four[1] in Index_list):
+    elif Index_Match(I1_four[1], I2_four[1]) == False and (I1_four[1] in Index_list and I2_four[1] in Index_list):
         for i in R1_four:
             R1_swapped.write(i + "\n")
         for i in R2_four:
             R2_swapped.write(i + "\n")
 
-
-    if Index_Match(I1_four[1], I2_four[1]) == True and (I1_four[1] in Index_list and I2_four[1] in Index_list): # The Rev comp will be in the list because it's the same as index1, which is in the list
+    elif Index_Match(I1_four[1], I2_four[1]) == True and (I1_four[1] in Index_list and I2_four[1] in Index_list): # The Rev comp will be in the list because it's the same as index1, which is in the list
         for i in R1_four:
             #R1_handle = Index_dict[str(I1_four[1] + "_R1")]
             Index_dict[str(I1_four[1] + "_R1")].write(i + "\n")
             #print(i)
             # <gzip _io.BufferedWriter name='GTAGCGTA_R1.fastq.gz' 0x2aaab2256d90>
-
         for i in R2_four:
             Index_dict[str(I1_four[1] + "_R2")].write(i + "\n")
             #print(i)
-    elif (I1_four[1] not in Index_list) or (I2_four[1] not in Index_list):
+    else:
         for i in R1_four:
             R1_bad.write(i + "\n")
         for i in R2_four:
