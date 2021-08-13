@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-
+# Function Definitions
 def convert_phred(letter):
 #Takes as it's input each individual Phred score (character), and uses Phred33 encoding to convert it to an integer Quality Score.```
     QS = ord(letter) - 33
@@ -39,6 +39,7 @@ def Index_Match(seq1, seq2):
     else:
         return False
 
+# # DEMUX Algorithm Description
 # # 48 files = one Read1 FASTQ file and one Read2 FASTQ file per matching index-pair (24 index pairs)
 # #     - each read file needs to have the header adjusted to have the indexes on it (the read 1 and read 2 index)
 # # 2 files = two FASTQ files with index-hopped reads-pairs
@@ -119,12 +120,13 @@ R1_four = []    # [header, sequence, +, qscore_line]
 R2_four = []    # [header, sequence, +, qscore_line]
 I1_four = []    # [header, sequence, +, qscore_line]
 I2_four = []    # [header, sequence, +, qscore_line]
-readline_counter = 0
+# initialize the counters that are going to hold statistics that will be written to the output report    
 N_count = 0
 low_qual = 0
 swapped_count = 0
 correct_index = 0
 unknown_index = 0
+readline_counter = 0
 while readline_counter < num_lines: # for every line in the file
     R1_four = []    # clear the four line array before moving on to the next record
     R2_four = []
@@ -155,7 +157,7 @@ while readline_counter < num_lines: # for every line in the file
     Read2_QS = qual_score(R2_four[3])
     Index1_QS = qual_score(I1_four[3])
     Index2_QS = qual_score(I2_four[3])
-# initialize the counters that are going to hold statistics that will be written to the output report    
+
 # Check if indexes contain N by looking at the last 17 characters of the new header
 # If Total_Index contains an N -> write the corresponding record from Read1 to R1_bad.out
     if "N" in R1_four[0][-18:] or "N" in R2_four[0][-18:]:
@@ -194,6 +196,7 @@ while readline_counter < num_lines: # for every line in the file
         for i in R2_four:
             Index_dict[str(I1_four[1] + "_R2")].write(i + "\n")
             #print(i)
+ # Catch-all which grabs all the reads with unknown indexes at the end.   
     else:
         unknown_index += 1
         for i in R1_four:
@@ -209,6 +212,7 @@ Demux_algorithm_report.write("Reads with Unknown Index = " + str(unknown_index)+
 
 #print("at the level of while loop \n") # if you do stuff here it only processes the last record
 
+# Close all the files!
 Read1_file.close()
 Read2_file.close()
 Index1_file.close()
@@ -218,35 +222,5 @@ Demux_algorithm_report.close()
 for k in Index_dict: # loop through the Index dictionary
     Index_dict[k].close()
 
-
-#         Check if index Qscore is below the cutoff(20), or if Read quality line is below the cutoff(30):
-#         Else if either index is below the cutoff (20) or read quality is below cutoff (30) > write the corresponding record from Read1 to R1_bad.out
-
-#         Use Index_Match to check if indexes match:
-#         If both indexes are in the known set of indexes: 
-#             If Index1 is the same as (==) Index2 > return TRUE and write the corresponding record from Read1 to index#_R1.out
-#             else if Index1 is different from (!=)  Index2 > return FALSE and write the corresponding record from Read1 to R1_swapped.out
-#         Else (one or both of the indexes is not in the known set of indexes):
-#             Write the corresponding record to R1_bad.out
-
-
-#     For Read2:
-#         create new_header:
-#         new_header = current_header + total_index 
-
-#         Check if indexes contain N:
-#         If Index1 or Index2 contains an N > write the corresponding record from Read2 to R2_bad.out
-
-#         Check if index Qscore is below the cutoff(20), or if Read quality line is below the cutoff(30):
-#         Else if either index is below the cutoff (20) or read quality is below cutoff (30) > write the corresponding record from Read2 to R2_bad.out
-
-#         Use Index_Match to check if indexes match:
-#         If both indexes are in the known set of indexes: 
-#             If Index1 is the same as (==) Index2 > return TRUE and write the corresponding record from Read2 to index#_R2.out
-#             else if Index1 is different from (!=)  Index2 > return FLASE and write the corresponding record from Read1 to R2_swapped.out
-#         Else (one or both of the indexes is not in the known set of indexes):
-#             Write the corresponding record to R2_bad.out
-
-# Close all the files!
 
 
