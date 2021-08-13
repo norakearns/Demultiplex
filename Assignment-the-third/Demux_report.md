@@ -2,6 +2,7 @@ Percentage of reads from each sample
 Overall amount of index swapping
 Any figures/any other relevant data your code output
 
+```
 Barcode     Records     Percent of reads from each barcode:
 AACAGCGA_R1 8661460     2.38
 AACAGCGA_R2 8661460
@@ -55,4 +56,6 @@ R1_bad 42913865         11.8
 R2_bad 42913865
 R1_swapped 603107       0.166 
 R2_swapped 603107
+```
+
 total - 726493470/2 -> 363246735 reads 
